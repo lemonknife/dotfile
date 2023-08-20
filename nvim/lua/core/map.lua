@@ -2,16 +2,10 @@ local M = {}
 
 M.general = {
 	["i"] = {
-		["<A-i>"] = "<Esc>:m .-2<CR>==gi",
-		["<A-k>"] = "<Esc>:m .+1<CR>==gi",
-		["<A-Up>"] = "<C-\\><C-N><C-w>k",
-		["<A-Down>"] = "<C-\\><C-N><C-w>j",
-		["<A-Left>"] = "<C-\\><C-N><C-w>h",
-		["<A-Right>"] = "<C-\\><C-N><C-w>l",
 		["<C-k>"] = "<C-j>",
 		["<C-j>"] = "<C-h>",
 	},
-	["nox"] = {
+    ["nox"] = {
 		-- replacement for movement
 		["i"] = "k",
 		["I"] = "K",
