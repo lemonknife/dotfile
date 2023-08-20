@@ -1,6 +1,6 @@
 local M = {}
 
-F = require("core.function")
+F = require("core.util")
 
 local function shell_call(args)
 	local output = vim.fn.system(args)
