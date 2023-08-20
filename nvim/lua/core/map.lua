@@ -22,6 +22,9 @@ M.general = {
 		[";"] = ":",
 	},
 	["n"] = {
+        -- close all highlight for searching results
+        ["<leader>nh"] = ":nohl<CR>",
+
 		-- resize with arrows
 		["<C-Up>"] = ":resize -2<CR>",
 		["<C-Down>"] = ":resize +2<CR>",
