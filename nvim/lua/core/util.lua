@@ -13,12 +13,12 @@ M.set_map = function()
 			table.insert(modes, char)
 		end
 
-			for mapping, keybind in pairs(mode_values) do
-				local actual_key = type(keybind) == "table" and keybind[1] or keybind
-				local options = type(keybind) == "table" and keybind[2] or { noremap = true, silent = true }
-				vim.keymap.set(modes, mapping, actual_key, options)
-			end
+		for mapping, keybind in pairs(mode_values) do
+			local actual_key = type(keybind) == "table" and keybind[1] or keybind
+			local options = type(keybind) == "table" and keybind[2] or { noremap = true, silent = true }
+			vim.keymap.set(modes, mapping, actual_key, options)
 		end
+	end
 end
 
 M.set_vim = function(setting)
@@ -34,21 +34,21 @@ M.set_vim = function(setting)
 end
 
 M.lazy_map = function(plug)
-    map = require("core.map")
-    local keys = {}
+	map = require("core.map")
+	local keys = {}
 	for mode, mode_values in pairs(map[plug]) do
 		local modes = {}
 		for char in mode:gmatch(".") do
 			table.insert(modes, char)
 		end
 
-			for mapping, keybind in pairs(mode_values) do
-				local actual_key = type(keybind) == "table" and keybind[1] or keybind
-				local options = type(keybind) == "table" and keybind[2] or { noremap = true, silent = true }
-                table.insert(keys, { mapping, actual_key, modes, options })
-			end
+		for mapping, keybind in pairs(mode_values) do
+			local actual_key = type(keybind) == "table" and keybind[1] or keybind
+			local options = type(keybind) == "table" and keybind[2] or { noremap = true, silent = true }
+			table.insert(keys, { mapping, actual_key, modes, options })
 		end
-    return keys
+	end
+	return keys
 end
 
 return M

@@ -5,7 +5,7 @@ M.general = {
 		["<C-k>"] = "<C-j>",
 		["<C-j>"] = "<C-h>",
 	},
-    ["nox"] = {
+	["nox"] = {
 		-- replacement for movement
 		["i"] = "k",
 		["I"] = "K",
@@ -22,8 +22,8 @@ M.general = {
 		[";"] = ":",
 	},
 	["n"] = {
-        -- close all highlight for searching results
-        ["<leader>nh"] = ":nohl<CR>",
+		-- close all highlight for searching results
+		["<leader>nh"] = ":nohl<CR>",
 
 		-- resize with arrows
 		["<C-Up>"] = ":resize -2<CR>",
