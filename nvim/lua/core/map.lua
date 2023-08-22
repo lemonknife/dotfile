@@ -32,7 +32,7 @@ M.general = {
 		["<C-Right>"] = ":vertical resize +2<CR>",
 
 		-- save files
-		["<C-s>"] = "<cmd> w <CR>",
+		-- ["<C-s>"] = "<cmd> w <CR>",
 	},
 
 	["t"] = {

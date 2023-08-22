@@ -12,4 +12,16 @@ local plugins = {
     },
 }
 
-require("lazy").setup(plugins, require("set.lazy"))
+local lazy_opts = {
+  defaults = { lazy = true },
+  ui = {
+    icons = {
+      ft = "",
+      lazy = "󰂠 ",
+      loaded = "",
+      not_loaded = "",
+    },
+  },
+}
+
+require("lazy").setup(require("set"), lazy_opts)

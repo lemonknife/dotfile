@@ -49,6 +49,6 @@ M.lazy_map = function(plug)
 			end
 		end
     return keys
-    end
+end
 
 return M
