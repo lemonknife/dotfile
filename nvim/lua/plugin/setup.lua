@@ -1,16 +1,4 @@
-local plugins = {
-	-- TODO: replace setting as opt("plugin_name") opt = require("core.util").plug_opt
-	{
-		"NvChad/nvim-colorizer.lua",
-		lazy = false,
-		opts = {
-			user_default_options = {
-				css = true,
-				names = false,
-			},
-		},
-	},
-}
+local plugins = require("core.util").load_plug()
 
 local lazy_opts = {
 	defaults = { lazy = true },
@@ -24,4 +12,4 @@ local lazy_opts = {
 	},
 }
 
-require("lazy").setup(require("set"), lazy_opts)
+require("lazy").setup(plugins, lazy_opts)

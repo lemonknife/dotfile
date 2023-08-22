@@ -5,6 +5,6 @@ return {
 		user_default_options = {
 			css = true,
 			names = false,
-		},
-	},
+		}
+	}
 }

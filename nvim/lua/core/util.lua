@@ -51,4 +51,17 @@ M.lazy_map = function(plug)
 	return keys
 end
 
+M.load_plug = function()
+	local lfs = require("lfs")
+	local plugins = {}
+	path = os.getenv("HOME") .. "/.config/nvim/lua/set/"
+
+	for file in lfs.dir(path) do
+		if lfs.attributes(path .. file).mode == "file" then
+			table.insert(plugins, require("set." .. string.gsub(file, "%.lua$", "")))
+		end
+	end
+	return plugins
+end
+
 return M
