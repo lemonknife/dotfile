@@ -56,7 +56,6 @@ M.lazy_map = function(plug)
 	return keys
 end
 
-
 M.load_plug = function()
 	local lfs = require("lfs")
 	local plugins = {}
@@ -79,8 +78,8 @@ M.init_plug = function(plugins)
 	end
 	vim.opt.rtp:prepend(lazy_path)
 
-local lazy_opts = require("config.lazy")
-require("lazy").setup(plugins, lazy_opts)
+	local lazy_opts = require("config.lazy")
+	require("lazy").setup(plugins, lazy_opts)
 end
 
 return M
