@@ -5,9 +5,9 @@ M.echo = function(str)
 	vim.api.nvim_echo({ { str, "Bold" } }, true, {})
 end
 
-M.set_map = function()
-	map = require("core.map")
-	for mode, mode_values in pairs(map.general) do
+M.set_map = function(map)
+    for section, map_section in pairs(map) do
+	for mode, mode_values in pairs(map_section) do
 		local modes = {}
 		for char in mode:gmatch(".") do
 			table.insert(modes, char)
@@ -19,6 +19,7 @@ M.set_map = function()
 			vim.keymap.set(modes, mapping, actual_key, options)
 		end
 	end
+end
 end
 
 M.set_vim = function(setting)
