@@ -1,5 +1,6 @@
-local vim_setting = {}
 local util = require("util")
+
+local vim_setting = {}
 vim_setting.g = {
 	tex_flavor = "latex",
 	vimtex_view_general_viewer = "zathura",
