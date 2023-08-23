@@ -1,13 +1,18 @@
 local M = {}
 
+M.shell_call = function(args)
+	local output = vim.fn.system(args)
+	assert(vim.v.shell_error == 0, "External call failed with error code: " .. vim.v.shell_error .. "\n" .. output)
+end
+
 M.echo = function(str)
 	vim.cmd("redraw")
 	vim.api.nvim_echo({ { str, "Bold" } }, true, {})
 end
 
-M.set_map = function(map)
-    for section, map_section in pairs(map) do
-	for mode, mode_values in pairs(map_section) do
+M.set_map = function(section)
+	local map = require("config.map")
+	for mode, mode_values in pairs(map[section]) do
 		local modes = {}
 		for char in mode:gmatch(".") do
 			table.insert(modes, char)
@@ -19,7 +24,6 @@ M.set_map = function(map)
 			vim.keymap.set(modes, mapping, actual_key, options)
 		end
 	end
-end
 end
 
 M.set_vim = function(setting)
@@ -35,7 +39,7 @@ M.set_vim = function(setting)
 end
 
 M.lazy_map = function(plug)
-	map = require("core.map")
+	local map = require("config.map")
 	local keys = {}
 	for mode, mode_values in pairs(map[plug]) do
 		local modes = {}
@@ -52,17 +56,31 @@ M.lazy_map = function(plug)
 	return keys
 end
 
+
 M.load_plug = function()
 	local lfs = require("lfs")
 	local plugins = {}
-	path = os.getenv("HOME") .. "/.config/nvim/lua/set/"
+	path = os.getenv("HOME") .. "/.config/nvim/lua/plugin/"
 
 	for file in lfs.dir(path) do
 		if lfs.attributes(path .. file).mode == "file" then
-			table.insert(plugins, require("set." .. string.gsub(file, "%.lua$", "")))
+			table.insert(plugins, require("plugin." .. string.gsub(file, "%.lua$", "")))
 		end
 	end
 	return plugins
+end
+
+M.init_plug = function(plugins)
+	local lazy_path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+	if not vim.loop.fs_stat(lazy_path) then
+		F.echo("  Installing lazy.nvim & plugins ...")
+		local repo = "https://github.com/folke/lazy.nvim.git"
+		shell_call({ "git", "clone", "--filter=blob:none", "--branch=stable", repo, lazy_path })
+	end
+	vim.opt.rtp:prepend(lazy_path)
+
+local lazy_opts = require("config.lazy")
+require("lazy").setup(plugins, lazy_opts)
 end
 
 return M

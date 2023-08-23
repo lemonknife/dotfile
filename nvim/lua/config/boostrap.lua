@@ -1,4 +1,3 @@
-
 F = require("util")
 
 local function shell_call(args)
@@ -14,7 +13,7 @@ end
 	end
 	vim.opt.rtp:prepend(lazy_path)
 
-local plugins = require("util").load_plug()
+local plugins = F.load_plug()
 
 local lazy_opts = {
 	defaults = { lazy = true },
