@@ -72,9 +72,9 @@ end
 M.init_plug = function(plugins)
 	local lazy_path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 	if not vim.loop.fs_stat(lazy_path) then
-		F.echo("  Installing lazy.nvim & plugins ...")
+		M.echo("  Installing lazy.nvim & plugins ...")
 		local repo = "https://github.com/folke/lazy.nvim.git"
-		shell_call({ "git", "clone", "--filter=blob:none", "--branch=stable", repo, lazy_path })
+		M.shell_call({ "git", "clone", "--filter=blob:none", "--branch=stable", repo, lazy_path })
 	end
 	vim.opt.rtp:prepend(lazy_path)
 
