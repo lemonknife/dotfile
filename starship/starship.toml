@@ -20,10 +20,13 @@ $nodejs\
 $php\
 $python\
 $rust\
-[ ](fg:#212736 bg:#1d2230)\
+[](#212736)\
+$fill\
+[](fg:#1d2230)\
 $time\
-[ ](fg:#1d2230)\
-\n$character"""
+$line_break\
+$character\
+"""
 
 [buf]
 symbol = " "
@@ -185,6 +188,9 @@ truncation_symbol = "…/"
 "Music" = " "
 "Pictures" = " "
 
+[fill]
+symbol = " "
+
 [git_branch]
 symbol = ""
 style = "bg:#394260"
@@ -198,7 +204,7 @@ format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:#1d2230"
-format = '[[ $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
 
 [username]
 show_always = true
