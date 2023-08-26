@@ -202,14 +202,14 @@ format = '[[ $time ](fg:#a0a9cb bg:#1d2230)]($style)'
 
 [username]
 show_always = true
-style_user = "bg:#a3aed2 fg:#090c0c"
+style_user = "bg:#a3aed2 fg:#394260"
 style_root = "bg:#a3aed2 fg:#ff757f"
 format = '[$user ]($style)'
 disabled = false
 
 [os]
 style = "bg:#a3aed2"
-format = '[[ $symbol](bg:#a3aed2 fg:#090c0c)]($style)'
+format = '[[ $symbol](bg:#a3aed2 fg:#769ff0)]($style)'
 disabled = false
 
 [os.symbols]
