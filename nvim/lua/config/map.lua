@@ -56,4 +56,10 @@ M.general = {
 	},
 }
 
+M.treesitter = {
+    ["n"] = {
+        ["<C-,>"] = "gg=G"
+    }
+}
+
 return M

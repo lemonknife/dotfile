@@ -1,52 +1,52 @@
 local M = {}
 
 M.g = {
-	-- leader
-	mapleader = " ",
-	maplocalleader = " ",
+    -- leader
+    mapleader = " ",
+    maplocalleader = " ",
 
-	-- file encoding
-	encoding = "UTF-8",
+    -- file encoding 
+    encoding = "UTF-8",
 }
 
 M.o = {
-	-- file encoding
-	fileencoding = "utf-8",
+    -- file encoding
+    fileencoding = "utf-8",
 
-	-- surrounding
-	scrolloff = 8,
-	sidescrolloff = 14,
+    -- surrounding
+    scrolloff = 8,
+    sidescrolloff = 14,
 }
 
 M.opt = {
-	-- row number
-	relativenumber = true,
-	number = true,
+    -- row number
+    relativenumber = true,
+    number = true,
 
-	-- indent
-	tabstop = 4,
-	shiftwidth = 4,
-	expandtab = true,
-	autoindent = true,
+    -- indent
+    tabstop = 4,
+    shiftwidth = 4,
+    expandtab = true,
+    autoindent = true,
 
-	wrap = false,
+    wrap = false,
 
-	cursorline = true,
+    cursorline = true,
 
-	-- sync with system clipboard (":" is for using append function)
-	clipboard = ":unnamedplus",
+    -- sync with system clipboard (":" is for using append function)
+    clipboard = ":unnamedplus",
 
-	-- default position of splited windows
-	splitright = true,
-	splitbelow = true,
+    -- default position of splited windows
+    splitright = true,
+    splitbelow = true,
 
-	-- search
-	ignorecase = true,
-	smartcase = true,
+    -- search
+    ignorecase = true,
+    smartcase = true,
 
-	-- appearence
-	termguicolors = true,
-	signcolumn = "yes",
+    -- appearence
+    termguicolors = true,
+    signcolumn = "yes",
 }
 
 return M
