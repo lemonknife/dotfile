@@ -22,7 +22,9 @@ $python\
 $rust\
 [](#212736)\
 $fill\
-[](fg:#1d2230)\
+[](#394260)\
+$battery\
+[](bg:#394260 fg:#1d2230)\
 $time\
 $line_break\
 $character\
@@ -31,7 +33,62 @@ $character\
 [buf]
 symbol = " "
 style = "bg:#212736"
-format = '[[$symbol($version) ](fg:#769ff0 bg:#212736)]($style)'
+format = '[[$symbol($version) ](fg:#769ff0 bg:#394260)]($style)'
+
+[battery]
+format = '[ $symbol ($percentage) ](fg:#769ff0 bg:#394260)'
+
+[[battery.display]]
+threshold = 10
+discharging_symbol = '󰁺'
+charging_symbol = '󰢜'
+
+[[battery.display]]
+threshold = 20
+discharging_symbol = '󰁻'
+charging_symbol = '󰂆'
+
+[[battery.display]]
+threshold = 30
+discharging_symbol = '󰁼'
+charging_symbol = '󰂇'
+
+[[battery.display]]
+threshold = 40
+discharging_symbol = '󰁽'
+charging_symbol = '󰂈'
+
+[[battery.display]]
+threshold = 50
+discharging_symbol = '󰁾'
+charging_symbol = '󰢝'
+
+[[battery.display]]
+threshold = 60
+discharging_symbol = '󰁿'
+charging_symbol = '󰂉'
+
+[[battery.display]]
+threshold = 70
+discharging_symbol = '󰂀'
+charging_symbol = '󰢞'
+
+[[battery.display]]
+threshold = 80
+discharging_symbol = '󰂁'
+charging_symbol = '󰂋'
+
+[[battery.display]]
+threshold = 90
+discharging_symbol = '󰂂'
+charging_symbol = '󰂋'
+
+[[battery.display]]
+threshold = 95
+discharging_symbol = '󰁹'
+charging_symbol = '󰂄'
+
+
 
 [c]
 symbol = " "
