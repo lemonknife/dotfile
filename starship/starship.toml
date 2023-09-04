@@ -111,7 +111,7 @@ style = "bg:#212736"
 format = '[[$symbol($version) ](fg:#769ff0 bg:#212736)]($style)'
 
 [dotnet]
-symbol = ' '
+symbol = '󰪮 '
 style = "bg:#212736"
 format = '[[$symbol($version) ](fg:#769ff0 bg:#212736)]($style)'
 
