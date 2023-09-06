@@ -20,7 +20,7 @@ M.set_map = function(section)
 
 		for mapping, keybind in pairs(mode_values) do
 			local actual_key = type(keybind) == "table" and keybind[1] or keybind
-			local options = type(keybind) == "table" and keybind[2] or { noremap = true, silent = true }
+			local options = type(keybind) == "table" and keybind[2] or { noremap = true, silent = false }
 			vim.keymap.set(modes, mapping, actual_key, options)
 		end
 	end
