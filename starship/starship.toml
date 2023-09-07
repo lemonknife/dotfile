@@ -40,7 +40,7 @@ format = '[ $symbol ($percentage) ](fg:#769ff0 bg:#394260)'
 
 [[battery.display]]
 threshold = 10
-discharging_symbol = '󰂎'
+discharging_symbol = '󱃍'
 charging_symbol = '󰢟'
 
 [[battery.display]]
