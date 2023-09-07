@@ -37,6 +37,7 @@ format = '[[$symbol($version) ](fg:#769ff0 bg:#394260)]($style)'
 
 [battery]
 format = '[ $symbol ($percentage) ](fg:#769ff0 bg:#394260)'
+unknown_symbol = '󱉞'
 
 [[battery.display]]
 threshold = 10
