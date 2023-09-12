@@ -1,0 +1,7 @@
+{
+    "coc.preferences.extensionUpdateCheck": "daily",
+    "suggest.noselect": true,
+    "suggest.enablePreselect": false,
+    "lua.enable": true,
+    "json.enable": true
+}
