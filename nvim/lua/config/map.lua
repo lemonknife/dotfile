@@ -2,7 +2,6 @@ local M = {}
 
 M.general = {
     ["i"] = {
-        ["<C-k>"] = "<C-j>",
         ["<C-j>"] = "<C-h>",
     },
     ["nox"] = {
@@ -50,13 +49,6 @@ M.general = {
         ["<A-i>"] = ":m '<-2<CR>gv-gv",
         ["<A-k>"] = ":m '>+1<CR>gv-gv",
     },
-
-    ["c"] = {
-        -- navigate tab completion with <c-j> and <c-k>
-        -- runs conditionally
-        ["<C-k>"] = { 'pumvisible() ? "\\<C-n>" : "\\<C-j>"', { expr = true, noremap = true } },
-        ["<C-i>"] = { 'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { expr = true, noremap = true } },
-    },
 }
 
 M.treesitter = {
@@ -64,5 +56,51 @@ M.treesitter = {
         ["<C-,>"] = "gg=G"
     }
 }
+
+local function check_back_space()
+    local col = vim.fn.col('.') - 1
+    return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
+end
+
+M.coc= {
+    ["i"] = {
+        ["<CR>"] = { function ()
+            if vim.fn['coc#pum#visible']() == 1 then
+                return vim.fn['coc#_select_confirm']();
+            end
+            return "<CR>"
+        end,
+            { expr = true }
+        },
+        ["<Tab>"] = { function()
+            if vim.fn['coc#pum#visible']() == 1 then
+                return vim.fn['coc#pum#next'](1)
+            end
+            return "<Tab>"
+        end,
+            { expr = true }
+        },
+        ["<S-Tab>"] = { function ()
+            if vim.fn['coc#pum#visible']() == 1 then
+                return vim.fn['coc#pum#prev'](1)
+            end
+            if check_back_space then
+                return vim.fn['coc#refresh']()
+            end
+            return "<S-Tab>"
+        end,
+            { expr = true }
+        },
+        ["<Esc>"] = { function ()
+            if vim.fn["coc#pum#visible"]() == 1 then
+                return vim.fn["coc#pum#cancel"]()
+            end
+            return "<Esc>"
+        end,
+            { expr = true }
+        }
+    }
+}
+
 
 return M

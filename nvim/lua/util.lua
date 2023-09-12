@@ -59,7 +59,7 @@ end
 M.load_plug = function()
 	local lfs = require("lfs")
 	local plugins = {}
-	path = os.getenv("HOME") .. "/.config/nvim/lua/plugin/"
+	local path = os.getenv("HOME") .. "/.config/nvim/lua/plugin/"
 
 	for file in lfs.dir(path) do
 		if lfs.attributes(path .. file).mode == "file" then
