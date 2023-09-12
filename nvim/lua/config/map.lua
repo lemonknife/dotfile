@@ -2,7 +2,8 @@ local M = {}
 
 M.general = {
     ["i"] = {
-        ["<C-j>"] = "<C-h>",
+        ["<C-k>"] = "<C-j>",
+        ["<C-j>"] = "<C-h>"
     },
     ["nox"] = {
         -- replacement for movement
@@ -51,20 +52,9 @@ M.general = {
     },
 }
 
-M.treesitter = {
-    ["n"] = {
-        ["<C-,>"] = "gg=G"
-    }
-}
-
-local function check_back_space()
-    local col = vim.fn.col('.') - 1
-    return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
-end
-
-M.coc= {
+M.coc = {
     ["i"] = {
-        ["<CR>"] = { function ()
+        ["<CR>"] = { function()
             if vim.fn['coc#pum#visible']() == 1 then
                 return vim.fn['coc#_select_confirm']();
             end
@@ -80,25 +70,25 @@ M.coc= {
         end,
             { expr = true }
         },
-        ["<S-Tab>"] = { function ()
+        ["<S-Tab>"] = { function()
             if vim.fn['coc#pum#visible']() == 1 then
                 return vim.fn['coc#pum#prev'](1)
             end
-            if check_back_space then
-                return vim.fn['coc#refresh']()
-            end
-            return "<S-Tab>"
+            return vim.fn['coc#refresh']()
         end,
             { expr = true }
         },
-        ["<Esc>"] = { function ()
+        ["<Esc>"] = { function()
             if vim.fn["coc#pum#visible"]() == 1 then
                 return vim.fn["coc#pum#cancel"]()
             end
             return "<Esc>"
         end,
             { expr = true }
-        }
+        },
+    },
+    ["n"] = {
+        ["<leader>f"] = "<Plug>(coc-format-selected)"
     }
 }
 

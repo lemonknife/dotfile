@@ -1,6 +1,6 @@
 -- init each modules
 -- init basic config
-util = require("util")
+local util = require("util")
 util.set_vim(require("config.default"))
 util.set_map("general")
 
