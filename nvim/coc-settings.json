@@ -4,11 +4,15 @@
     "suggest.noselect": true,
     "suggest.enablePreselect": false,
 
+    // highlight configure
+    "colors.enable": true,
+    "highlight.colorNames.enable": false,
+
+    // json configure
+    "json.enable": true,
+
     // lua configure
     "sumneko-lua.enable": true,
     "sumneko-lua.locale": "zh-cn",
-    "Lua.workspace.checkThirdParty": false,
-
-    // json configure
-    "json.enable": true
+    "Lua.workspace.checkThirdParty": false
 }
