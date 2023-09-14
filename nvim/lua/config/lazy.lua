@@ -1,5 +1,7 @@
 return {
-    defaults = { lazy = true },
+    defaults = {
+        lazy = true
+    },
     ui = {
         icons = {
             ft = "",
@@ -7,5 +9,5 @@ return {
             loaded = "",
             not_loaded = "",
         },
-    },
+    }
 }

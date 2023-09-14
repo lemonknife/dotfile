@@ -3,6 +3,22 @@
     "coc.preferences.extensionUpdateCheck": "daily",
     "suggest.noselect": true,
     "suggest.enablePreselect": false,
+    "suggest.floatConfig": {
+        "border": true,
+        "rounded": true
+    },
+    "diagnostic.floatConfig": {
+        "border": true,
+        "rounded": true
+    },
+    "signature.floatConfig": {
+        "border": true,
+        "rounded": true
+    },
+    "hover.floatConfig": {
+        "border": true,
+        "rounded": true
+    },
 
     // highlight configure
     "colors.enable": true,
@@ -14,5 +30,8 @@
     // lua configure
     "sumneko-lua.enable": true,
     "sumneko-lua.locale": "zh-cn",
-    "Lua.workspace.checkThirdParty": false
+    "Lua.workspace.checkThirdParty": false,
+
+    // python configure
+    "pyright.enable": true,
 }
