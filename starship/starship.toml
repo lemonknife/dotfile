@@ -10,7 +10,6 @@ $git_status\
 [ ](fg:#394260 bg:#212736)\
 $buf\
 $c\
-$conda\
 $docker_context\
 $dotnet\
 $golang\
@@ -102,7 +101,7 @@ format = '[[$symbol($version) ](fg:#769ff0 bg:#212736)]($style)'
 [conda]
 symbol = " "
 style = "bg:#212736"
-format = '[[$symbol($version) ](fg:#769ff0 bg:#212736)]($style)'
+format = '[[$symbol($environment) ](fg:#769ff0 bg:#212736)]($style)'
 
 [dart]
 symbol = " "
