@@ -1,3 +1,31 @@
+local function prettier()
+    return {
+        exe = "prettier",
+        args = {
+            "--config-precedence",
+            "prefer-file",
+            "--single-quote",
+            "--no-bracket-spacing",
+            "--prose-wrap",
+            "always",
+            "--arrow-parens",
+            "always",
+            "--trailing-comma",
+            "all",
+            "--no-semi",
+            "--end-of-line",
+            "lf",
+            "--tab-width",
+            vim.bo.tabstop,
+            "--print-width",
+            vim.bo.textwidth,
+            "--stdin-filepath",
+            vim.fn.shellescape(vim.api.nvim_buf_get_name(0)),
+        },
+        stdin = true,
+    }
+end
+
 return {
     "mhartington/formatter.nvim",
     init = function()
@@ -8,12 +36,25 @@ return {
             command = "FormatWrite",
         })
     end,
-    ft = {
-        "lua",
-        "rs",
-    },
+    lazy = false,
     opts = {
         filetype = {
+            javascript = { prettier },
+            typescript = { prettier },
+            javascriptreact = { prettier },
+            typescriptreact = { prettier },
+            vue = { prettier },
+            ["javascript.jsx"] = { prettier },
+            ["typescript.tsx"] = { prettier },
+            markdown = { prettier },
+            css = { prettier },
+            json = { prettier },
+            jsonc = { prettier },
+            scss = { prettier },
+            less = { prettier },
+            yaml = { prettier },
+            graphql = { prettier },
+            html = { prettier },
             lua = {
                 function()
                     return {
