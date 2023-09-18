@@ -91,6 +91,9 @@ M.coc = {
             { expr = true },
         },
     },
+    ["n"] = {
+        ["<leader>gd"] = ":CocCommand git.diffCached<CR>"
+    }
 }
 
 return M
