@@ -1,6 +1,6 @@
 return {
     defaults = {
-        lazy = true
+        lazy = true,
     },
     ui = {
         icons = {
@@ -9,5 +9,5 @@ return {
             loaded = "",
             not_loaded = "",
         },
-    }
+    },
 }

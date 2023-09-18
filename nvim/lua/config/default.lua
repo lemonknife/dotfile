@@ -5,7 +5,7 @@ M.g = {
     mapleader = " ",
     maplocalleader = " ",
 
-    -- file encoding 
+    -- file encoding
     encoding = "UTF-8",
 }
 

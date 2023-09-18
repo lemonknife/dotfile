@@ -1,4 +1,3 @@
 return {
-	"rktjmp/lush.nvim",
-    lazy = false,
+    "rktjmp/lush.nvim",
 }

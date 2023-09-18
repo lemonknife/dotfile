@@ -3,5 +3,5 @@ return {
     lazy = false,
     branch = "master",
     build = "npm ci",
-    init = require("util").set_map("coc")
+    init = require("util").set_map("coc"),
 }
