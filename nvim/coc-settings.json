@@ -20,6 +20,16 @@
         "rounded": true
     },
 
+    // pair configure
+    "pairs.enableCharacters": [
+        "(",
+        "[",
+        "{",
+        "<",
+        "'",
+        "\""
+    ],
+
     // highlight configure
     "colors.enable": true,
     "highlight.colorNames.enable": false,
@@ -34,4 +44,12 @@
 
     // python configure
     "pyright.enable": true,
+
+    // rust configure
+    "rust-analyzer.enable": true,
+    "workspace.ignoredFolders": [
+        "$HOME",
+        "$HOME/.cargo/**",
+        "$HOME/.rustup/**"
+    ]
 }
