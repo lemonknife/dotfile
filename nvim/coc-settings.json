@@ -40,6 +40,7 @@
     // lua configure
     "sumneko-lua.enable": true,
     "sumneko-lua.locale": "zh-cn",
+    "sumneko-lua.enableNvimLuaDev": true,
     "Lua.workspace.checkThirdParty": false,
 
     // python configure
