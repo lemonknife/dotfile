@@ -7,6 +7,42 @@
         "border": true,
         "rounded": true
     },
+    "suggest.completionItemKindLabels": {
+        "array": "\uea8a",
+        "boolean": "\uea8f",
+        "class": "\ueb5b",
+        "color": "\ueb5c",
+        "constant": "\ueb5d",
+        "constructor": "\uea8c",
+        "enum": "\uea95",
+        "enumMember": "\ueb5e",
+        "event": "\uea86",
+        "field": "\ueb5f",
+        "file": "\uea7b",
+        "folder": "\udb80\ude4b",
+        "function": "\uea8c",
+        "interface": "\ueb61",
+        "key": "\uea93",
+        "keyword": "\ueb62",
+        "method": "\uea8c",
+        "module": "\ueb29",
+        "namespace": "\uea8b",
+        "null": "\udb81\udfe2",
+        "number": "\uea90",
+        "object": "\uea8b",
+        "operator": "\ueb64",
+        "package": "\ueb29",
+        "property": "\ueb65",
+        "reference": "\ueb36",
+        "snippet": "\ueb66",
+        "string": "\ueb8d",
+        "struct": "\uea91",
+        "text": "\uea93",
+        "typeParameter": "\uea92",
+        "unit": "\uea96",
+        "value": "\uea93",
+        "variable": "\uea88"
+    },
     "diagnostic.floatConfig": {
         "border": true,
         "rounded": true
@@ -48,6 +84,7 @@
 
     // rust configure
     "rust-analyzer.enable": true,
+    "rust-analyzer.server.path": "/usr/bin/rust-analyzer",
     "workspace.ignoredFolders": [
         "$HOME",
         "$HOME/.cargo/**",
