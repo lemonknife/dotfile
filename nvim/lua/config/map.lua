@@ -65,48 +65,4 @@ M.treesitter = {
     },
 }
 
--- coc keymap
-M.coc = {
-    ["i"] = {
-        ["<CR>"] = {
-            function()
-                if vim.fn["coc#pum#visible"]() == 1 then
-                    return vim.fn["coc#_select_confirm"]()
-                end
-                return "<CR>"
-            end,
-            { expr = true },
-        },
-        ["<Tab>"] = {
-            function()
-                if vim.fn["coc#pum#visible"]() == 1 then
-                    return vim.fn["coc#pum#next"](1)
-                end
-                return "<Tab>"
-            end,
-            { expr = true },
-        },
-        ["<S-Tab>"] = {
-            function()
-                if vim.fn["coc#pum#visible"]() == 1 then
-                    return vim.fn["coc#pum#prev"](1)
-                end
-                return vim.fn["coc#refresh"]()
-            end,
-            { expr = true },
-        },
-        ["<Esc>"] = {
-            function()
-                if vim.fn["coc#pum#visible"]() == 1 then
-                    return vim.fn["coc#pum#cancel"]()
-                end
-                return "<Esc>"
-            end,
-            { expr = true },
-        },
-    },
-    ["n"] = {
-        ["<leader>gd"] = ":CocCommand git.diffCached<CR>",
-    },
-}
 return M
