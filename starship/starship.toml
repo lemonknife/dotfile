@@ -35,63 +35,63 @@ style = "bg:#212736"
 format = '[[$symbol($version) ](fg:#769ff0 bg:#394260)]($style)'
 
 [battery]
-format = '[ $symbol ($percentage) ](fg:#769ff0 bg:#394260)'
-unknown_symbol = '󱉞'
+format = '[ $symbol($percentage) ](fg:#769ff0 bg:#394260)'
+unknown_symbol = "󱉞 "
 
 [[battery.display]]
 threshold = 10
-discharging_symbol = '󱃍'
-charging_symbol = '󰢟'
+discharging_symbol = "󱃍 "
+charging_symbol = "󰢟 "
 
 [[battery.display]]
 threshold = 20
-discharging_symbol = '󰁺'
-charging_symbol = '󰢜'
+discharging_symbol = "󰁺 "
+charging_symbol = "󰢜 "
 
 [[battery.display]]
 threshold = 30
-discharging_symbol = '󰁻'
-charging_symbol = '󰂆'
+discharging_symbol = "󰁻 "
+charging_symbol = "󰂆 "
 
 [[battery.display]]
 threshold = 40
-discharging_symbol = '󰁼'
-charging_symbol = '󰂇'
+discharging_symbol = "󰁼 "
+charging_symbol = "󰂇 "
 
 [[battery.display]]
 threshold = 50
-discharging_symbol = '󰁽'
-charging_symbol = '󰂈'
+discharging_symbol = "󰁽 "
+charging_symbol = "󰂈 "
 
 [[battery.display]]
 threshold = 60
-discharging_symbol = '󰁾'
-charging_symbol = '󰢝'
+discharging_symbol = "󰁾 "
+charging_symbol = "󰢝 "
 
 [[battery.display]]
 threshold = 70
-discharging_symbol = '󰁿'
-charging_symbol = '󰂉'
+discharging_symbol = "󰁿 "
+charging_symbol = "󰂉 "
 
 [[battery.display]]
 threshold = 80
-discharging_symbol = '󰂀'
-charging_symbol = '󰢞'
+discharging_symbol = "󰂀 "
+charging_symbol = "󰢞 "
 
 [[battery.display]]
 threshold = 90
-discharging_symbol = '󰂁'
-charging_symbol = '󰂊'
+discharging_symbol = "󰂁 "
+charging_symbol = "󰂊 "
 
 [[battery.display]]
 threshold = 95
-discharging_symbol = '󰂂'
-charging_symbol = '󰂋'
+discharging_symbol = "󰂂 "
+charging_symbol = "󰂋 "
 
 [[battery.display]]
 threshold = 100
-discharging_symbol = '󰁹'
-charging_symbol = '󰂄'
+discharging_symbol = "󰁹 "
+charging_symbol = "󰂄 "
 
 [c]
 symbol = " "
@@ -267,7 +267,7 @@ format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:#1d2230"
-format = '[[  $time  ](fg:#a0a9cb bg:#1d2230)]($style)'
+format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
 
 [username]
 show_always = true
