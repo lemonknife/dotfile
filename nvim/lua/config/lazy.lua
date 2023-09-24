@@ -1,6 +1,11 @@
 return {
+    spec = { import = "plugin" },
     defaults = {
         lazy = true,
+        version = false,
+    },
+    checker = {
+        enabled = true,
     },
     ui = {
         icons = {

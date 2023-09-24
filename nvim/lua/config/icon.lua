@@ -140,7 +140,7 @@ return {
         BoldHint = "",
         Hint = "󰌶",
         Debug = "",
-        Trace = "✎",
+        Trace = "",
     },
     misc = {
         Robot = "󰚩",

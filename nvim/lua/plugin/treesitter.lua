@@ -25,6 +25,7 @@ return {
             "markdown_inline",
             "python",
             "regex",
+            "rust",
             "scss",
             "toml",
             "vim",
@@ -43,6 +44,10 @@ return {
             max_file_lines = nil,
         },
     },
+    init = function()
+        local util = require("util")
+        util.set_map("treesitter")
+    end,
     config = function(_, opts)
         require("nvim-treesitter.configs").setup(opts)
     end,

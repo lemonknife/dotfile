@@ -35,9 +35,8 @@ M.general = {
         ["<C-Right>"] = ":vertical resize +2<CR>",
 
         -- save files
-        -- ["<C-s>"] = "<cmd> w <CR>",
+        ["<C-s>"] = ":w <CR>",
     },
-
     ["t"] = {
         -- Terminal window navigation
         ["<C-j>"] = "<C-\\><C-N><C-w>h",
@@ -52,6 +51,21 @@ M.general = {
     },
 }
 
+-- nvim-tree keymap
+M.tree = {
+    ["n"] = {
+        ["<leader>e"] = { ":NvimTreeToggle<CR>", { noremap = true, silence = true } },
+    },
+}
+
+-- treesitter keymap
+M.treesitter = {
+    ["n"] = {
+        ["<C-,>"] = "gg=G``",
+    },
+}
+
+-- coc keymap
 M.coc = {
     ["i"] = {
         ["<CR>"] = {
@@ -92,8 +106,7 @@ M.coc = {
         },
     },
     ["n"] = {
-        ["<leader>gd"] = ":CocCommand git.diffCached<CR>"
-    }
+        ["<leader>gd"] = ":CocCommand git.diffCached<CR>",
+    },
 }
-
 return M
