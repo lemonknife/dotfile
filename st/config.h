@@ -5,10 +5,10 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "CaskaydiaCove Nerd Font Propo:pixelsize=25:antialias=true:autohint=true";
+static char *font = "Cascadia Code:pixelsize=25:antialias=true:autohint=true";
 static char *font2[] = {
+    "CaskaydiaCove Nerd Font Mono:pixelsize=26:antialias=true:autohint=true",
     "Noto Sans Mono CJK SC=25:antialias=true:autohint=true",
-    "CaskaydiaCove Nerd Font Mono:pixelsize=27:antialias=true:autohint=true",
 };
 static int borderpx = 10;
 
