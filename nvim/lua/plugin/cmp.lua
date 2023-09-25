@@ -51,13 +51,6 @@ return {
                 ["<C-f>"] = cmp.mapping.scroll_docs(4),
                 ["<C-Space>"] = cmp.mapping.complete(),
                 ["<CR>"] = cmp.mapping.confirm({ select = false }),
-                ["<Esc>"] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        cmp.abort()
-                    else
-                        fallback()
-                    end
-                end),
                 ["<Tab>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
                         cmp.select_next_item()

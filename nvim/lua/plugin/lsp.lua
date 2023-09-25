@@ -4,6 +4,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         "hrsh7th/nvim-cmp",
         "utilyre/barbecue.nvim",
+        "folke/neoconf.nvim",
     },
     lazy = false,
     init = function()
@@ -47,6 +48,7 @@ return {
     config = function()
         local lsp = require("lspconfig")
         local cap = require("cmp_nvim_lsp").default_capabilities()
+        require("neoconf").setup({ import = { coc = false } })
         local servers = require("config.lspserver")
         for _, server in pairs(servers) do
             lsp[server].setup({

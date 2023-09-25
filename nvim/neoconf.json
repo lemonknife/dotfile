@@ -1,0 +1,17 @@
+{
+    "lspconfig": {
+        "lua_ls": {
+            "Lua.workspace.checkThirdParty": false,
+            "Lua.completion.callSnippet": "Replace",
+            "Lua.diagnostics.globals": [
+                "vim"
+            ]
+        },
+        "ltex": {
+            "ltex.enabled": [
+                "latex",
+                "markdown"
+            ]
+        }
+    }
+}
