@@ -9,4 +9,10 @@ use lazy.nvim configure: ``spec = { import = "plugin" }`` to import all neovim p
 modified from tokyo-night presets from official presets
 
 ## st
-still configuring
+~~still configuring~~
+
+applied patches:
+ - alpha
+ - boxdraw
+ - ligatukes (boxdraw)
+ - font2
