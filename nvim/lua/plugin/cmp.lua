@@ -13,7 +13,6 @@ end
 
 return {
     "hrsh7th/nvim-cmp",
-    lazy = false,
     dependencies = {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-cmdline",
@@ -22,10 +21,14 @@ return {
         "saadparwaiz1/cmp_luasnip",
         "hrsh7th/cmp-path",
         "rafamadriz/friendly-snippets",
+        "windwp/nvim-autopairs",
     },
     config = function()
         local cmp = require("cmp")
         local luasnip = require("luasnip")
+        local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+        require("nvim-autopairs").setup()
+        cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
         vim.opt.completeopt = { "menu", "menuone", "noselect", "noinsert" }
         require("luasnip.loaders.from_vscode").lazy_load()
         local opts = {

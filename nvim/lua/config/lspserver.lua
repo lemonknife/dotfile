@@ -2,7 +2,6 @@ local servers = {
     "html",
     "lua_ls",
     "jsonls",
-    "omnisharp_mono",
     "tsserver",
     "ltex",
     "pyright",

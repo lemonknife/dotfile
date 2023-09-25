@@ -2,7 +2,6 @@ local icons = require("config.icon")
 
 return {
     "lewis6991/gitsigns.nvim",
-    lazy = false,
     opts = {
         signs = {
             add = {

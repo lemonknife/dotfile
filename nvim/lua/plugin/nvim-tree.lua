@@ -8,7 +8,6 @@ vim_setting.g = {
 return {
     "nvim-tree/nvim-tree.lua",
     version = "*",
-    lazy = false,
     init = util.set_vim(vim_setting),
     dependencies = {
         "nvim-tree/nvim-web-devicons",

@@ -36,7 +36,6 @@ return {
             command = "FormatWrite",
         })
     end,
-    lazy = false,
     opts = {
         filetype = {
             javascript = { prettier },
@@ -46,7 +45,7 @@ return {
             vue = { prettier },
             ["javascript.jsx"] = { prettier },
             ["typescript.tsx"] = { prettier },
-            markdown = { prettier },
+            -- markdown = { prettier },
             css = { prettier },
             json = { prettier },
             jsonc = { prettier },

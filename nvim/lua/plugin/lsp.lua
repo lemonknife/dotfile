@@ -5,8 +5,8 @@ return {
         "hrsh7th/nvim-cmp",
         "utilyre/barbecue.nvim",
         "folke/neoconf.nvim",
+    "folke/neodev.nvim",
     },
-    lazy = false,
     init = function()
         vim.o.updatetime = 250
         function OpenDiagnosticIfNoFloat()

@@ -1,7 +1,7 @@
 return {
     spec = { import = "plugin" },
     defaults = {
-        lazy = true,
+        lazy = false,
         version = false,
     },
     checker = {
