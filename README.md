@@ -14,5 +14,7 @@ modified from tokyo-night presets from official presets
 applied patches:
  - alpha
  - boxdraw
- - ligatukes (boxdraw)
+ - ligatures (boxdraw ver.)
  - font2
+
+__add tokyo-night color preset from st tokyo-night theme setting__
