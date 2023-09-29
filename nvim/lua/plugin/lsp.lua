@@ -5,7 +5,7 @@ return {
         "hrsh7th/nvim-cmp",
         "utilyre/barbecue.nvim",
         "folke/neoconf.nvim",
-    "folke/neodev.nvim",
+        "folke/neodev.nvim",
     },
     init = function()
         vim.o.updatetime = 250
@@ -48,6 +48,7 @@ return {
     config = function()
         local lsp = require("lspconfig")
         local cap = require("cmp_nvim_lsp").default_capabilities()
+        require("neodev").setup({})
         require("neoconf").setup({ import = { coc = false } })
         local servers = require("config.lspserver")
         for _, server in pairs(servers) do
