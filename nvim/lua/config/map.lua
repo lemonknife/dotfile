@@ -65,4 +65,12 @@ M.treesitter = {
     },
 }
 
+-- bufferline keymap
+M.bufferline = {
+    ["n"] = {
+        ["<A-l>"] = ":bnext<CR>",
+        ["<A-j>"] = ":bprevious<CR>",
+    },
+}
+
 return M
