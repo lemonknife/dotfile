@@ -33,9 +33,6 @@ M.opt = {
 
     cursorline = true,
 
-    -- sync with system clipboard (":" is for using append function)
-    clipboard = ":unnamedplus",
-
     -- default position of splited windows
     splitright = true,
     splitbelow = true,
@@ -48,5 +45,7 @@ M.opt = {
     termguicolors = true,
     signcolumn = "yes",
 }
+
+vim.opt.clipboard:append("unnamedplus")
 
 return M

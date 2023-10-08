@@ -29,11 +29,7 @@ end
 M.set_vim = function(setting)
     for section, opt_table in pairs(setting) do
         for opt, set in pairs(opt_table) do
-            if type(set) == "string" and string.sub(set, 1, 1) == ":" then
-                vim[section][opt]:append(string.sub(set, 2))
-            else
-                vim[section][opt] = set
-            end
+            vim[section][opt] = set
         end
     end
 end
@@ -56,7 +52,7 @@ M.lazy_map = function(plug)
     return keys
 end
 
-M.init_plug = function(plugins)
+M.init_plug = function()
     local lazy_path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
     if not vim.loop.fs_stat(lazy_path) then
         M.echo("  Installing lazy.nvim & plugins ...")
