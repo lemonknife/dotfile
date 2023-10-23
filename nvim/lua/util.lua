@@ -19,9 +19,8 @@ M.set_map = function(section)
         end
 
         for mapping, keybind in pairs(mode_values) do
-            local actual_key = type(keybind) == "table" and keybind[1] or keybind
-            local options = type(keybind) == "table" and keybind[2] or { noremap = true, silent = false }
-            vim.keymap.set(modes, mapping, actual_key, options)
+            local options = { noremap = true, silent = false}
+            vim.keymap.set(modes, mapping, keybind, options)
         end
     end
 end
@@ -44,9 +43,8 @@ M.lazy_map = function(plug)
         end
 
         for mapping, keybind in pairs(mode_values) do
-            local actual_key = type(keybind) == "table" and keybind[1] or keybind
-            local options = type(keybind) == "table" and keybind[2] or { noremap = true, silent = true }
-            table.insert(keys, { mapping, actual_key, modes, options })
+            local options = { noremap = true, silent = false }
+            table.insert(keys, { mapping, keybind, modes, options })
         end
     end
     return keys

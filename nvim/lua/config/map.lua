@@ -20,13 +20,13 @@ M.general = {
         ["<C-i>"] = "<C-w>k",
         ["<C-l>"] = "<C-w>l",
         [";"] = ":",
+        ["<leader>nh"] = ":nohl<CR>",
     },
     ["n"] = {
         ["<leader>sv"] = "<C-w>v",
         ["<leader>sh"] = "<C-w>s",
         ["<leader>sc"] = "<C-w>q",
         -- close all highlight for searching results
-        ["<leader>nh"] = ":nohl<CR>",
 
         -- resize with arrows
         ["<C-Up>"] = ":resize -2<CR>",
@@ -54,7 +54,7 @@ M.general = {
 -- nvim-tree keymap
 M.tree = {
     ["n"] = {
-        ["<leader>e"] = { ":NvimTreeToggle<CR>", { noremap = true, silence = true } },
+        ["<leader>e"] = ":NvimTreeToggle<CR>",
     },
 }
 
@@ -70,6 +70,19 @@ M.bufferline = {
     ["n"] = {
         ["<A-l>"] = ":bnext<CR>",
         ["<A-j>"] = ":bprevious<CR>",
+    },
+}
+
+M.silicon = {
+    ["n"] = {
+        ["<leader>s"] = function()
+            require("silicon").visualise_api({ to_clip = false, visible = true })
+        end,
+    },
+    ["vox"] = {
+        ["<leader>s"] = function()
+            require("silicon").visualise_api({ to_clip = false })
+        end,
     },
 }
 
