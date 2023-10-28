@@ -29,7 +29,7 @@ return {
         local cmp_autopairs = require("nvim-autopairs.completion.cmp")
         require("nvim-autopairs").setup()
         cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
-        vim.opt.completeopt = { "menu", "menuone", "noselect", "noinsert" }
+        vim.opt.completeopt = { "menu", "menuone", "noselect", "preview", "noinsert" }
         require("luasnip.loaders.from_vscode").lazy_load()
         local opts = {
             preselect = false,

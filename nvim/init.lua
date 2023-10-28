@@ -20,6 +20,22 @@ if not vim.loop.fs_stat(lazy_path) then
 end
 vim.opt.rtp:prepend(lazy_path)
 
+local lazy_cmd = require("lazy.view.config").commands
+local lazy_keys = {
+	{ cmd = "install", key = "i" },
+	{ cmd = "update",  key = "u" },
+	{ cmd = "sync",    key = "s" },
+	{ cmd = "clean",   key = "cl" },
+	{ cmd = "check",   key = "ch" },
+	{ cmd = "log",     key = "l" },
+	{ cmd = "restore", key = "rs" },
+	{ cmd = "profile", key = "p" },
+}
+
+for _, v in ipairs(lazy_keys) do
+	lazy_cmd[v.cmd].key = "<SPC>" .. v.key
+	lazy_cmd[v.cmd].key_plugin = "<leader>" .. v.key
+end
 local lazy_opts = require("config.lazy")
 require("lazy").setup(lazy_opts)
 
