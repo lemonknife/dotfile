@@ -1,89 +1,55 @@
 local M = {}
+local mode_n = { "n", "v", "o" }
+local mode_v = { "v" }
+local mode_i = { "i" }
 
-M.general = {
-    ["i"] = {
-        ["<C-k>"] = "<C-j>",
-        ["<C-j>"] = "<C-h>",
-    },
-    ["nox"] = {
-        -- replacement for movement
-        ["i"] = "k",
-        ["I"] = "K",
-        ["k"] = "j",
-        ["K"] = "J",
-        ["j"] = "h",
-        ["J"] = "H",
-        ["h"] = "i",
-        ["H"] = "I",
-        ["<C-j>"] = "<C-w>h",
-        ["<C-k>"] = "<C-w>j",
-        ["<C-i>"] = "<C-w>k",
-        ["<C-l>"] = "<C-w>l",
-        [";"] = ":",
-        ["<leader>nh"] = ":nohl<CR>",
-    },
-    ["n"] = {
-        ["<leader>sv"] = "<C-w>v",
-        ["<leader>sh"] = "<C-w>s",
-        ["<leader>sc"] = "<C-w>q",
-        -- close all highlight for searching results
+local mapping = {
+    { from = "<C-k>", to = "<C-j>", mode = mode_i },
+    { from = "<C-j>", to = "<C-h>", mode = mode_i },
 
-        -- resize with arrows
-        ["<C-Up>"] = ":resize -2<CR>",
-        ["<C-Down>"] = ":resize +2<CR>",
-        ["<C-Left>"] = ":vertical resize -2<CR>",
-        ["<C-Right>"] = ":vertical resize +2<CR>",
+    -- replacement for movement
+    { from = "i", to = "k", mode = mode_n },
+    { from = "I", to = "K", mode = mode_n },
+    { from = "k", to = "j", mode = mode_n },
+    { from = "K", to = "J", mode = mode_n },
+    { from = "j", to = "h", mode = mode_n },
+    { from = "J", to = "H", mode = mode_n },
+    { from = "h", to = "i", mode = mode_n },
+    { from = "H", to = "I", mode = mode_n },
+    { from = "<C-j>", to = "<C-w>h", mode = mode_n },
+    { from = "<C-k>", to = "<C-w>j", mode = mode_n },
+    { from = "<C-i>", to = "<C-w>k", mode = mode_n },
+    { from = "<C-l>", to = "<C-w>l", mode = mode_n },
+    { from = ";", to = ":", mode = mode_n },
+    { from = "<leader>nh", to = ":nohl<CR>", mode = mode_n },
 
-        -- save files
-        ["<C-s>"] = ":w <CR>",
-    },
-    ["t"] = {
-        -- Terminal window navigation
-        ["<C-j>"] = "<C-\\><C-N><C-w>h",
-        ["<C-k>"] = "<C-\\><C-N><C-w>j",
-        ["<C-i>"] = "<C-\\><C-N><C-w>k",
-        ["<C-l>"] = "<C-\\><C-N><C-w>l",
-    },
-    ["x"] = {
-        -- Move current line / block with Alt-j/k ala vscode.
-        ["<A-i>"] = ":m '<-2<CR>gv-gv",
-        ["<A-k>"] = ":m '>+1<CR>gv-gv",
-    },
+    { from = "<leader>sv", to = "<C-w>v" },
+    { from = "<leader>sh", to = "<C-w>s" },
+    { from = "<leader>sc", to = "<C-w>q" },
+    -- close all highlight for searching results
+
+    -- resize with arrows
+    { from = "<C-Up>", to = ":resize -2<CR>" },
+    { from = "<C-Down>", to = ":resize +2<CR>" },
+    { from = "<C-Left>", to = ":vertical resize -2<CR>" },
+    { from = "<C-Right>", to = ":vertical resize +2<CR>" },
+
+    -- save files
+    { from = "<C-s>", to = ":w <CR>" },
+    -- ["t"] = {
+    -- Terminal window navigation
+    -- ["<C-j>"] = "<C-\\><C-N><C-w>h",
+    -- ["<C-k>"] = "<C-\\><C-N><C-w>j",
+    -- ["<C-i>"] = "<C-\\><C-N><C-w>k",
+    -- ["<C-l>"] = "<C-\\><C-N><C-w>l",
+    -- },
+    -- Move current line / block with Alt-j/k ala vscode.
+    { from = "<A-i>", to = ":m '<-2<CR>gv-gv", mode = mode_v },
+    { from = "<A-k>", to = ":m '>+1<CR>gv-gv", mode = mode_v },
 }
 
--- nvim-tree keymap
-M.tree = {
-    ["n"] = {
-        ["<leader>e"] = ":NvimTreeToggle<CR>",
-    },
-}
-
--- treesitter keymap
-M.treesitter = {
-    ["n"] = {
-        ["<C-,>"] = "gg=G``",
-    },
-}
-
--- bufferline keymap
-M.bufferline = {
-    ["n"] = {
-        ["<A-l>"] = ":bnext<CR>",
-        ["<A-j>"] = ":bprevious<CR>",
-    },
-}
-
-M.silicon = {
-    ["n"] = {
-        ["<leader>s"] = function()
-            require("silicon").visualise_api({ to_clip = false, visible = true })
-        end,
-    },
-    ["vox"] = {
-        ["<leader>s"] = function()
-            require("silicon").visualise_api({ to_clip = false })
-        end,
-    },
-}
+for _, map in ipairs(mapping) do
+    vim.keymap.set(map.mode or "n", map.from, map.to, { noremap = true })
+end
 
 return M

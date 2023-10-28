@@ -43,11 +43,8 @@ return {
             max_file_lines = nil,
         },
     },
-    init = function()
-        local util = require("util")
-        util.set_map("treesitter")
-    end,
     config = function(_, opts)
         require("nvim-treesitter.configs").setup(opts)
+        vim.keymap.set("n", "<C-,", "gg=G``", { noremap = true, silent = true })
     end,
 }

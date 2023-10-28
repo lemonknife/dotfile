@@ -6,7 +6,12 @@ return {
     },
     event = "VeryLazy",
     init = function()
-        require("util").set_map("silicon")
+        vim.keymap.set("n", "<leader>s", function()
+            require("silicon").visualise_api({ to_clip = false, visible = true })
+        end, { noremap = true, silent = true })
+        vim.keymap.set("x", "<leader>s", function()
+            require("silicon").visualise_api({ to_clip = false })
+        end, { noremap = true, silent = true })
         local silicon_utils = require("silicon.utils")
         vim.api.nvim_create_augroup("SiliconRefresh", { clear = true })
         vim.api.nvim_create_autocmd({ "ColorScheme" }, {

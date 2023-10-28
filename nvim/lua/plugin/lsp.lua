@@ -56,5 +56,8 @@ return {
                 capabilities = cap,
             })
         end
+        lsp.omnisharp.setup({
+            capabilities = cap,
+        })
     end,
 }

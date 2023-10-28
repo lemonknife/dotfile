@@ -3,8 +3,8 @@ return {
     version = "*",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     init = function()
-        local util = require("util")
-        util.set_map("bufferline")
+        vim.keymap.set("n", "<A-l>", ":bnext<CR>", { noremap = true })
+        vim.keymap.set("n", "<A-j>", ":bprevious<CR>", { noremap = true })
     end,
     opts = {
         options = {
