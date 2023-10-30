@@ -35,11 +35,6 @@ if command -sq sl
     alias sl='sl -ceF'
 end
 
-# alias for gitui
-if command -sq gitui
-    alias gui='gitui'
-end
-
 # alias for rm
 if command -sq rmtrash
     alias rm='rmtrash'
