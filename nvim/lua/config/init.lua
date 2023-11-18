@@ -6,7 +6,9 @@ local defaults = {
         autocmds = true,
         keymaps = true,
     },
-    colorscheme = "tokyonight",
+    colorscheme = function ()
+        require("tokyonight").load()
+    end,
     -- used by other plugins
     icons = {
         misc = {
