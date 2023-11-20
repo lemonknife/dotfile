@@ -2,7 +2,7 @@ local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require("lazy").setup({
-    spec = { import = "plugins" },
+    spec = { { import = "plugins" }, { import = "plugins.lang" } },
     defaults = {
         lazy = false,
         version = false,
