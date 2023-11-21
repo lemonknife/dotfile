@@ -17,14 +17,6 @@ return {
         },
     -- stylua: ignore
     keys = {
-      {
-        "<tab>",
-        function()
-          return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
-        end,
-        expr = true, silent = true, mode = "i",
-      },
-      { "<tab>", function() require("luasnip").jump(1) end, mode = "s" },
       { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
     },
     },
@@ -42,6 +34,7 @@ return {
         opts = function()
             vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
             local cmp = require("cmp")
+            local luasnip = require("luasnip")
             local defaults = require("cmp.config.default")()
             return {
                 completion = {
@@ -51,6 +44,10 @@ return {
                     expand = function(args)
                         require("luasnip").lsp_expand(args.body)
                     end,
+                },
+                window = {
+                    completion = cmp.config.window.bordered(),
+                    documentation = cmp.config.window.bordered(),
                 },
                 mapping = cmp.mapping.preset.insert({
                     ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -64,7 +61,7 @@ return {
                         fallback()
                     end,
                     -- confirm tab
-                    ["<tab>"] = cmp.mapping(function(fallback)
+                    ["<Tab>"] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                             local entry = cmp.get_selected_entry()
                             if not entry then
@@ -72,10 +69,13 @@ return {
                             else
                                 cmp.confirm()
                             end
+                        -- integrate with luasnip
+                        elseif luasnip.expand_or_jumpable() then
+                            luasnip.expand_or_jump()
                         else
                             fallback()
                         end
-                    end, { "i", "s", "c" }),
+                    end, { "i", "s" }),
                 }),
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
