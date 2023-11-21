@@ -12,6 +12,7 @@ map(mode_n, "<C-h>", "<C-w>h")
 map(mode_n, "<C-j>", "<C-w>j")
 map(mode_n, "<C-k>", "<C-w>k")
 map(mode_n, "<C-l>", "<C-w>l")
+map(mode_n, "s", "")
 map(mode_n, ";", ":")
 
 -- close all highlight for searching results
